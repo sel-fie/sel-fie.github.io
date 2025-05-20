@@ -1,4 +1,24 @@
-p{
-    color:plum;
+body{
+    background-color: #E9B0BD ;
+}
+
+h3{
     text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    margin-left: 30px;
+    display: inline-block
+}
+
+#about{
+    display: inline-block;
+}
+
+.text{
+    color: #14263C;
 }
