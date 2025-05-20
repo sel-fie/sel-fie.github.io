@@ -8,7 +8,7 @@ h3{
 
 h1{
     text-align: center;
-    font-family: fantasy;
+    font-family:'Times New Roman', Times, serif ;
 }
 
 img{
@@ -21,10 +21,19 @@ img{
 }
 
 p{
-    font-size: medium;
+    text-align: center;
+    font-size: large;
+}
+
+a{
+    color: #642226;
+}
+
+a:hover{
+    color:#6C4191;
 }
 
 .text{
     color: #14263C;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-family:'Times New Roman', Times, serif ;
 }
