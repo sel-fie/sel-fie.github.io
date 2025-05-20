@@ -12,11 +12,15 @@ h1{
 
 img{
     margin-left: 30px;
-    display: inline-block
+    display: inline-block;
 }
 
 #about{
     display: inline-block;
+}
+
+#more{
+    display:inline-block;
 }
 
 .text{
