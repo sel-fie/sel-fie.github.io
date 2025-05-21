@@ -8,7 +8,7 @@ img{
 }
 
 figure{
-    float: left;
+    display: inline;
 }
 
 p{
