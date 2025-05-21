@@ -1,3 +1,17 @@
 body{
-    background-color:darkseagreen;
+    background-color: #627890 ;
+}
+
+.text {
+    font-family: "Kaisei Tokumin", serif; 
+}
+
+a{
+    color: white;
+
+}
+
+a:hover{
+
+   color: #642226; 
 }
