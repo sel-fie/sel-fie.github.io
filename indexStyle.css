@@ -2,14 +2,6 @@ body{
     background-color: #E9B0BD ;
 }
 
-h3{
-    text-align: center;
-}
-
-h1{
-    text-align: center;
-}
-
 img{
     margin-left: 30px;
     margin-right: 30px;
@@ -17,12 +9,7 @@ img{
     
 }
 
-#about{
-    text-align: center;   
-}
-
 p{
-    text-align: center;
     font-size: large;
 }
 
@@ -38,8 +25,6 @@ a:hover{
     color: #14263C;
     font-family: "Kaisei Tokumin", serif ;
     font-style: normal;
-}
-
-footer{
     text-align: center;
 }
+
