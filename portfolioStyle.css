@@ -13,5 +13,9 @@ a{
 }
 
 a:hover{
-    color:#007AFF;
+    color:#E9B0BD;
+}
+
+#top{
+    text-align: center;
 }
