@@ -12,11 +12,12 @@ body{
 
 a{
     color: #642226;
+    font-family: "Kaisei Tokumin", serif; 
+
 
 }
 
 a:hover{
-
    color: white;
 }
 
