@@ -4,37 +4,24 @@ body{
     padding:0;
 }
 
-img{
+.text {
+    font-family: "Kaisei Tokumin", serif; 
+    color: #14263C;
     margin-left: 30px;
-    margin-right: 30px;
-}
-
-figure{
-    float: left;
-}
-
-p{
-    font-size: large;
 }
 
 a{
     color: #642226;
-    font-family: "Kaisei Tokumin", serif ;
+
 }
 
 a:hover{
-    color:white;
+
+   color: white;
 }
 
-.text{
-    color: #14263C;
-    font-family: "Kaisei Tokumin", serif ;
-    font-style: normal;
+#top{
     text-align: center;
-}
-
-#about{
-    display: inline;
 }
 
 ul{
@@ -66,4 +53,3 @@ li a {
 li a:hover{
     background-color:#642226;
 }
-
