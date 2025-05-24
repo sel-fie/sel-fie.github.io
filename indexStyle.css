@@ -30,16 +30,24 @@ a:hover{
     text-align: center;
 }
 
+#about{
+    display: inline;
+}
+
 ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: antiquewhite;
+
+    position:fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-li{
-    display:inline;
+li {
+    float: left;
 }
 
 li a {
