@@ -8,7 +8,7 @@ img{
 }
 
 figure{
-    display: inline;
+    float: left;
 }
 
 p{
@@ -49,13 +49,14 @@ ul{
 
 li {
     float: left;
+    width: 50%;
 }
 
 li a {
     display: block;
     color: black;
     text-align: center;
-    padding: 20px 290px;
+    padding: 20px;
     text-decoration: none;
     font-size: large;
 }
