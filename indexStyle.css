@@ -20,7 +20,7 @@ a{
 }
 
 a:hover{
-    color:#6C4191;
+    color:white;
 }
 
 .text{
@@ -28,7 +28,6 @@ a:hover{
     font-family: "Kaisei Tokumin", serif ;
     font-style: normal;
     text-align: center;
-    display: inline;
 }
 
 ul{
@@ -40,7 +39,7 @@ ul{
 }
 
 li{
-    display: inline;
+    float:left;
 }
 
 li a {
@@ -48,9 +47,10 @@ li a {
     color: black;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
 }
 
 li a:hover{
-    background-color: cornflowerblue;
+    background-color:#642226;
 }
 
