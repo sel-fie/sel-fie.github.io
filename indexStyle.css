@@ -28,5 +28,29 @@ a:hover{
     font-family: "Kaisei Tokumin", serif ;
     font-style: normal;
     text-align: center;
+    display: inline;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+
+li{
+    display: inline;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover{
+    background-color: cornflowerblue;
 }
 
