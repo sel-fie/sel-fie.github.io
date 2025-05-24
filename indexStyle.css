@@ -17,6 +17,7 @@ p{
 
 a{
     color: #642226;
+    font-family: "Kaisei Tokumin", serif ;
 }
 
 a:hover{
@@ -54,8 +55,9 @@ li a {
     display: block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 290px;
     text-decoration: none;
+    font-size: large;
 }
 
 li a:hover{
