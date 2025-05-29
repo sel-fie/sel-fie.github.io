@@ -36,7 +36,9 @@ a:hover{
 }
 
 #about{
-    display: inline;
+    overflow: auto;
+    white-space: nowrap;
+    padding: auto;
 }
 
 ul{
