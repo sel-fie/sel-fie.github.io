@@ -49,9 +49,20 @@ li a {
     padding: 20px;
     text-decoration: none;
     font-size: large;
-     font-family: "Kaisei Tokumin", serif;
+    font-family: "Kaisei Tokumin", serif;
 }
 
 li a:hover{
     background-color:#642226;
+}
+
+div.scroll {
+    background-color: #642226;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+div.scroll-container img {
+    padding: 10px;
 }
