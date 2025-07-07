@@ -64,5 +64,9 @@ div.scroll {
 
 div.scroll-container img {
     padding: 10px;
-    height: 50%;
+    height: 200px;
+}
+
+img{
+    height: 200px;
 }
