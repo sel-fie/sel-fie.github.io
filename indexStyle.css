@@ -51,6 +51,11 @@ ul{
     width: 100%;
 }
 
+footer{
+    position: fixed;
+    bottom: 20px;
+}
+
 li {
     float: left;
     width: 50%;
