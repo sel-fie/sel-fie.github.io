@@ -69,7 +69,7 @@ li a {
     display: block;
     color: black;
     text-align: center;
-    padding: 20px;
+    /*padding: 20px; */
     text-decoration: none;
     font-size: large;
 }
