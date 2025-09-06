@@ -44,27 +44,21 @@
 
                 <br>
                 <p>here is some of my 3D modeling! : </p>
-                <div class="scroll"> 
-                    <img id="myImg" src="floortiles.png">
-                    <img id="myImg" src="arrow.png">
-                    <img id="myImg" src="cheese.png">
-                    <img id="myImg" src="pillar.png">
-                    <img id="myImg" src="torch.png">
-                    <img id="myImg" src="walls.png">
+                <div id="models" class="scroll"> 
+                    <img id="myImg" src="floortiles.png" alt="floortiles" onclick="myFunction(this);">
+                    <img id="myImg" src="arrow.png" alt="arrow" onclick="myFunction(this);">
+                    <img id="myImg" src="cheese.png" alt="cheese" onclick="myFunction(this);">
+                    <img id="myImg" src="pillar.png" alt="pillar" onclick="myFunction(this);">
+                    <img id="myImg" src="torch.png" alt="torch" onclick="myFunction(this);">
+                    <img id="myImg" src="walls.png" alt="walls" onclick="myFunction(this);">
                 </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
+                <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
 
-                    <!-- The Close Button -->
-                    <span class="close">&times;</span>
+                    <img id="expandedImg" style="width:100%">
 
-                    <!-- Modal Content (The Image) -->
-                    <img class="modal-content" id="img01">
-
-                    <!-- Modal Caption (Image Text) -->
-                    <div id="caption"></div>
+                    <div id ="imgtext"></div>
                 </div>
-
                 <br>
                 <br>
             <h3> bear game </h3>
@@ -101,30 +95,18 @@
                 <li> <a href="./contact.html">contact me!</a> </li>
             </ul>
         </div>
-
-        
         <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
+            function myFunction(imgs){
+                var expandImg = document.getElementById("expandedImg");
+                var imgText = document.getElementById("imgtext");
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-        }
+                expandImg.src = imgs.src;
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+                imgText.innerHTML = imgs.alt;
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-        modal.style.display = "none";
-        }
+                expandImg.parentElement.style.display = "block";
+            }
         </script>
-
+        
     </body>
 </html>
