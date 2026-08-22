@@ -139,6 +139,10 @@
     transition:transform .18s ease, box-shadow .18s ease;
   }
   .card:hover{transform:translateY(-3px); box-shadow:0 16px 30px -18px rgba(34,31,26,0.35);}
+  a.card{display:block; cursor:pointer;}
+  .card.image-only{cursor:zoom-in;}
+  .card.image-only:hover img{opacity:.92;}
+  .card img{transition:opacity .15s ease;}
   .card .bar{height:6px; width:100%;}
   .bar.coral{background:var(--coral);} .bar.teal{background:var(--teal);}
   .bar.violet{background:var(--violet);} .bar.gold{background:var(--gold);}
@@ -195,6 +199,23 @@
     .nav-mobile-hide{display:none;}
   }
 
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(34,31,26,0.88);
+    display:none; align-items:center; justify-content:center;
+    z-index:200; padding:40px; cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{
+    max-width:min(90vw, 900px); max-height:85vh; object-fit:contain;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6); border-radius:4px;
+  }
+  .lightbox .close{
+    position:absolute; top:28px; right:36px; color:var(--paper);
+    font-family:'Space Grotesk', sans-serif; font-size:28px; font-weight:600;
+    cursor:pointer; line-height:1;
+  }
+
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--line); padding:40px 0 60px;}
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
@@ -222,7 +243,7 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">hi, let me introduce myself! ✦</span>
-      <h1 class="title">I'm Sofie —<br>I make <span class="accent">games</span>,<br>and code everything else.</h1>
+      <h1 class="title">I'm Sofie —<br>I make <span class="accent">games</span>,<br>and code sometimes.</h1>
       <p class="sub">Computer Science student at McGill (Games concentration, Math minor). I split my time between Coding, Art, and Math— and I'm currently VP External for GameDev McGill.</p>
       <div class="hero-tags">
         <span class="pill coral">Game Dev</span>
@@ -253,8 +274,8 @@
   <div class="grid" id="masonry">
 
     <!-- GAMES -->
-     <div class="card" data-cat="games">
-      <div class="bar coral"></div>
+     <a class="card" data-cat="games" href="https://isjasz.itch.io/justice-is-blank" target="_blank" rel="noopener">
+      <div class="bar violet"></div>
       <img src="justice is blank cover.png" alt="Justice is [BLANK]">
       <div class="body">
         <span class="tag violet">Games · GMTK Gamejam 2026</span>
@@ -262,10 +283,10 @@
         <p>Character Art and minor UI programming</p>
         <div class="meta">itch.io</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card" data-cat="games">
-      <div class="bar coral"></div>
+    <a class="card" data-cat="games" href="https://flyingsheep22.itch.io/pose-pose-execution" target="_blank" rel="noopener">
+      <div class="bar teal"></div>
       <img src="Pose_Pose_Execution_Battle_Concept.png" alt="Pose Pose Execution">
       <div class="body">
         <span class="tag teal">Games · Ubisoft Gamelab 2026</span>
@@ -273,20 +294,20 @@
         <p>Awarded "Best User Experience" and the "Audience Award". UI artist and 3D environment and prop modeling </p>
         <div class="meta">itch.io</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card" data-cat="games">
-      <div class="bar coral"></div>
-      <img src="BUDDHA_POSTER.jpg" alt="I'm about to Blow!">
+    <a class="card" data-cat="games" href="https://sel-fie.itch.io/im-about-to-blow" target="_blank" rel="noopener">
+      <div class="bar gold"></div>
+      <img src="BUDDHA_POSTER.jpg" alt="I'm About to Blow!">
       <div class="body">
         <span class="tag gold">Games · ETS Gamejam 2026</span>
         <h3>I'm about to blow!</h3>
         <p> 3D prop modeling and UI art</p>
         <div class="meta">itch.io</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card" data-cat="games">
+    <a class="card" data-cat="games" href="https://sel-fie.itch.io/malefica" target="_blank" rel="noopener">
       <div class="bar coral"></div>
       <img src="malefica cover image.png" alt="Malefica">
       <div class="body">
@@ -295,9 +316,9 @@
         <p>Volunteered full-time while also competing — worked on environment and UI art as well as animation integration into Unity. Ineligible for prizes as a team of full time volunteers</p>
         <div class="meta">itch.io</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card" data-cat="games">
+    <a class="card" data-cat="games" href="https://averageosiris.itch.io/underfished" target="_blank" rel="noopener">
       <div class="bar teal"></div>
       <img src="underfished cover.png" alt="UnderFished">
       <div class="body">
@@ -306,11 +327,11 @@
         <p>48-hour hackathon build with a team of 4. Handled sound design and integration, assisted in bug fixing, and presentation.</p>
         <div class="meta">itch.io</div>
       </div>
-    </div>
+    </a>
 
     <div class="sticky-note">blah blah blah fill in later.</div>
 
-    <div class="card" data-cat="games">
+    <a class="card" data-cat="games" href="https://gdm-studios-team-5.itch.io/cratscendo" target="_blank" rel="noopener">
       <div class="bar violet"></div>
       <img src="cratscendo cover.jpg" alt="Cratscendo">
       <div class="body">
@@ -319,10 +340,10 @@
         <p>Team of 8, for a 10 week competition. Did character art, and some enemies + animations, most 3D modeling & map design, health system and room mechanics coding, and weekly devlogs.</p>
         <div class="meta">watch devlogs</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card" data-cat="games">
-      <div class="bar coral"></div>
+    <a class="card" data-cat="games" href="https://sel-fie.itch.io/hibearnate" target="_blank" rel="noopener">
+      <div class="bar gold"></div>
       <img src="fatbearmaxxing cover.png" alt="Hibearnate">
       <div class="body">
         <span class="tag gold">Games · Solo 2D Project</span>
@@ -330,49 +351,48 @@
         <p>Summer 2D game project I worked on. </p>
         <div class="meta">itch.io</div>
       </div>
-    </div>
+    </a>
 
-    <!-- 2D ART -->
-    <div class="card image-only" data-cat="2d" id="art">
+
+<!-- 2D ART -->
+    <div class="card image-only lightbox-trigger" data-cat="2d" id="art">
       <div class="bar gold"></div>
       <img src="https://sofieb.carrd.co/assets/images/gallery04/bcb88e16.jpg" alt="2D art">
       <div class="body"><span class="tag gold">2D Art / UI</span></div>
     </div>
-
-    <div class="card image-only" data-cat="2d">
+ 
+    <div class="card image-only lightbox-trigger" data-cat="2d">
       <div class="bar gold"></div>
       <img src="https://sofieb.carrd.co/assets/images/gallery04/ca683768.jpg" alt="2D art">
       <div class="body"><span class="tag gold">2D Art / UI</span></div>
     </div>
-
-    <div class="card image-only" data-cat="2d">
+ 
+    <div class="card image-only lightbox-trigger" data-cat="2d">
       <div class="bar gold"></div>
       <img src="https://sofieb.carrd.co/assets/images/gallery04/af73f9fa.jpg" alt="2D art">
       <div class="body"><span class="tag gold">2D Art / UI</span></div>
     </div>
-
+ 
     <!-- 3D ART -->
-    <div class="card image-only" data-cat="3d" id="threed">
+    <div class="card image-only lightbox-trigger" data-cat="3d" id="threed">
       <div class="bar violet"></div>
       <img src="https://sofieb.carrd.co/assets/images/gallery05/438379d2.jpg" alt="3D model">
       <div class="body"><span class="tag violet">3D Art / Blender</span></div>
     </div>
-
-    <div class="card image-only" data-cat="3d">
+ 
+    <div class="card image-only lightbox-trigger" data-cat="3d">
       <div class="bar violet"></div>
       <img src="https://sofieb.carrd.co/assets/images/gallery05/1fd1c8d2.jpg" alt="3D model">
       <div class="body"><span class="tag violet">3D Art / Blender</span></div>
     </div>
-
+ 
     <div class="sticky-note">all 3D work made in Blender — some from tutorials, most from scratch. still learning!</div>
-
-    <div class="card image-only" data-cat="3d">
+ 
+    <div class="card image-only lightbox-trigger" data-cat="3d">
       <div class="bar violet"></div>
       <img src="https://sofieb.carrd.co/assets/images/gallery05/afc1a0a6.jpg" alt="3D model">
       <div class="body"><span class="tag violet">3D Art / Blender</span></div>
     </div>
-
-  </div>
 </div>
 
 <div class="wrap" id="about">
@@ -397,6 +417,11 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
 </div>
 
 <footer>
@@ -428,6 +453,27 @@
         card.style.display = (filter==='all' || filter===cat) ? '' : 'none';
       });
     });
+  });
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+ 
+  document.querySelectorAll('.lightbox-trigger').forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      if(!img) return;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+ 
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  }
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeLightbox();
   });
 </script>
 
