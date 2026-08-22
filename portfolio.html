@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sofie Bieker — Portfolio</title>
- 
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap');
- 
+
   :root{
     --paper:#FBF3E7;
     --paper-deep:#F3E9D8;
@@ -20,20 +20,20 @@
     --gold:#F2A93B;
     --white:#FFFDF8;
   }
- 
+
   *{box-sizing:border-box; margin:0; padding:0;}
- 
+
   body{
     background:var(--paper);
     color:var(--ink);
     font-family:'Inter', sans-serif;
     -webkit-font-smoothing:antialiased;
   }
- 
+
   a{color:inherit; text-decoration:none;}
- 
+
   .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
- 
+
   /* ---------- NAV ---------- */
   nav{
     position:sticky; top:0; z-index:50;
@@ -50,13 +50,11 @@
     font-weight:700; font-size:19px; letter-spacing:-0.01em;
   }
   .logo span{color:var(--coral);}
-  .navlinks{display:flex; gap:28px; font-size:14.5px; font-weight:500; color:var(--ink-soft);}
-  .navlinks a:hover{color:var(--ink);}
   .navsocial{display:flex; gap:16px; font-size:13.5px; font-weight:500; color:var(--ink-soft);}
   .navsocial a{border-bottom:1px solid transparent;}
   .navsocial a:hover{color:var(--ink); border-color:var(--ink);}
   .nav-mobile-hide{display:flex; gap:28px;}
- 
+
   /* ---------- HERO ---------- */
   header.hero{padding:88px 0 64px;}
   .hero-grid{display:grid; grid-template-columns:1.3fr 0.7fr; gap:56px; align-items:center;}
@@ -72,8 +70,8 @@
   .hero p.sub{
     margin-top:20px; font-size:17px; line-height:1.65; color:var(--ink-soft); max-width:520px;
   }
- 
-  /* ---------- PILLS (cute version) ---------- */
+
+  /* ---------- PILLS ---------- */
   .hero-tags{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;}
   .pill{
     font-family:'Space Grotesk', sans-serif;
@@ -87,11 +85,11 @@
   .pill:nth-child(even){transform:rotate(2deg);}
   .pill:hover{transform:translateY(-2px) rotate(0deg); box-shadow:0 6px 0 0 rgba(34,31,26,0.08), 0 4px 10px rgba(34,31,26,0.12);}
   .pill .emo{font-size:16px;}
-  .pill.pink{background:#ffd6fc; color:#d368df;}
-  .pill.navy{background:#d3d4f1; color:#123071;}
-  .pill.green{background:#e1ffe3; color:#07501d;}
-  .pill.red{background:#fccbcb; color:#8a1a14;}
- 
+  .pill.coral{background:#FFE1D6; color:#C7431F;}
+  .pill.teal{background:#D3F1EC; color:#127167;}
+  .pill.violet{background:#E9E1FF; color:#5B3FD6;}
+  .pill.gold{background:#FCEACB; color:#8a5c14;}
+
   .polaroid{
     background:var(--white);
     padding:14px 14px 44px;
@@ -104,25 +102,16 @@
     width:100%; aspect-ratio:1/1; object-fit:cover; display:block; filter:saturate(1.05);
   }
   .polaroid .cap{
-    position:absolute; bottom:12px; left:16px;
+    position:absolute; bottom:12px; left:16px; right:16px;
     font-family:'Caveat', cursive; font-size:20px; color:var(--ink-soft); font-weight:600;
+    overflow-wrap:break-word;
   }
   .tape{
     position:absolute; top:-14px; left:50%; transform:translateX(-50%) rotate(-1deg);
     width:90px; height:26px; background:rgba(242,169,59,0.55);
     border:1px solid rgba(242,169,59,0.7);
   }
- 
-  /* ---------- SECTION LABELS ---------- */
-  .section-head{padding:64px 0 28px; display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;}
-  .section-head h2{
-    font-family:'Space Grotesk', sans-serif; font-size:30px; font-weight:700; letter-spacing:-0.01em;
-  }
-  .section-head .note{
-    font-family:'Caveat', cursive; font-size:19px; color:var(--ink-soft); transform:rotate(-1deg);
-  }
-  .rule{height:2px; background:repeating-linear-gradient(90deg, var(--ink) 0 8px, transparent 8px 14px); margin-bottom:8px; opacity:.35;}
- 
+
   /* ---------- FILTERS ---------- */
   .filters{display:flex; gap:10px; flex-wrap:wrap; padding-bottom:36px;}
   .filter-btn{
@@ -132,53 +121,93 @@
   }
   .filter-btn.active{background:var(--ink); color:var(--paper);}
   .filter-btn:not(.active):hover{background:var(--paper-deep);}
- 
-  /* ---------- MASONRY GRID ---------- */
-  .grid{
-    columns:3 280px; column-gap:22px; padding-bottom:80px;
+
+  /* ---------- PROJECT GRID ---------- */
+  .project-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:22px; padding-bottom:90px;
   }
-  @media (max-width:900px){ .grid{columns:2 240px;} }
-  @media (max-width:600px){ .grid{columns:1;} }
- 
-  .card{
-    break-inside:avoid; margin-bottom:22px;
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:6px;
-    overflow:hidden;
+  .project-card{
+    background:var(--white); border:1px solid var(--line); border-radius:10px;
+    overflow:hidden; cursor:pointer;
     transition:transform .18s ease, box-shadow .18s ease;
   }
-  .card:hover{transform:translateY(-3px); box-shadow:0 16px 30px -18px rgba(34,31,26,0.35);}
-  a.card{display:block; cursor:pointer;}
-  .card.image-only{cursor:zoom-in;}
-  .card.image-only:hover img{opacity:.92;}
-  .card img{transition:opacity .15s ease;}
-  .card .bar{height:6px; width:100%;}
-  .bar.coral{background:var(--coral);} .bar.teal{background:var(--teal);}
-  .bar.violet{background:var(--violet);} .bar.gold{background:var(--gold);}
- 
-  .card img{width:100%; display:block; object-fit:cover;}
-  .card .body{padding:16px 18px 20px;}
-  .card .tag{
-    font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  .project-card:hover{transform:translateY(-3px); box-shadow:0 16px 30px -18px rgba(34,31,26,0.35);}
+  .project-card img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block;}
+  .pc-body{padding:14px 16px 16px;}
+  .pc-meta{font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft);}
+  .project-card h3{font-family:'Space Grotesk', sans-serif; font-size:17px; font-weight:600; margin-top:5px;}
+  .pc-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:11px;}
+  .pc-tag{
+    font-size:10.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    padding:4px 10px; border-radius:100px;
   }
-  .tag.coral{color:var(--coral);} .tag.teal{color:var(--teal);}
-  .tag.violet{color:var(--violet);} .tag.gold{color:#8a5c14;}
-  .card h3{
-    font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; margin-top:6px;
+  .pc-tag.game{background:#FFE1D6; color:#C7431F;}
+  .pc-tag.art{background:#FCEACB; color:#8a5c14;}
+  .pc-tag.programming{background:#D3F1EC; color:#127167;}
+
+  /* ---------- PROJECT MODAL ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(34,31,26,0.86);
+    display:none; align-items:center; justify-content:center;
+    z-index:300; padding:28px;
   }
-  .card p{font-size:13.5px; color:var(--ink-soft); line-height:1.55; margin-top:8px;}
-  .card .meta{display:flex; align-items:center; gap:8px; margin-top:12px; font-size:12.5px; font-weight:600; color:var(--ink);}
-  .card .meta::after{content:"→"; margin-left:-2px;}
-  .card.image-only .body{padding:12px 14px 14px;}
-  .card.image-only h3{font-size:14px;}
- 
-  .sticky-note{
-    background:#FFF3B0; border:1px solid #E9CE5C;
-    padding:16px; font-family:'Caveat', cursive; font-size:19px; line-height:1.4; color:#4a3d0a;
-    transform:rotate(-1.5deg); break-inside:avoid; margin-bottom:22px; border-radius:2px;
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--paper); width:min(980px, 96vw); max-height:90vh; overflow-y:auto;
+    border-radius:16px; position:relative; box-shadow:0 40px 90px -20px rgba(0,0,0,0.55);
   }
- 
+  .modal-close{
+    position:absolute; top:18px; right:20px; z-index:2;
+    width:34px; height:34px; border-radius:100px; background:var(--white);
+    border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    font-size:18px; cursor:pointer; box-shadow:0 4px 10px rgba(34,31,26,0.15);
+  }
+  .modal-tabs{display:flex; gap:8px; padding:26px 28px 0;}
+  .modal-tab{
+    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:13px;
+    padding:9px 18px; border-radius:100px; border:1.5px solid var(--ink);
+    background:transparent; cursor:pointer; transition:all .15s ease;
+  }
+  .modal-tab.active{background:var(--ink); color:var(--paper);}
+  .modal-tab:not(.active):hover{background:var(--paper-deep);}
+  .modal-title{padding:22px 28px 0;}
+  .modal-title h2{font-family:'Space Grotesk', sans-serif; font-size:26px; font-weight:700;}
+  .modal-title .pc-meta{margin-top:4px; display:block;}
+  .modal-gallery{
+    display:grid; grid-template-columns:96px 1fr; gap:14px;
+    padding:22px 28px 0;
+  }
+  .modal-gallery.single-image{grid-template-columns:1fr;}
+  .modal-thumbs{display:flex; flex-direction:column; gap:10px;}
+  .modal-thumbs img{
+    width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; cursor:pointer;
+    opacity:.55; border:2px solid transparent; transition:opacity .15s ease, border-color .15s ease;
+  }
+  .modal-thumbs img.active{opacity:1; border-color:var(--coral);}
+  .modal-main img{
+    width:100%; max-height:420px; object-fit:contain; background:var(--white);
+    border-radius:10px; border:1px solid var(--line); display:block;
+  }
+  .modal-about{padding:22px 28px 30px;}
+  .modal-about span.about-label{
+    font-family:'Caveat', cursive; color:#8a5c14; font-size:19px; margin-bottom:6px; display:block;
+  }
+  .modal-about p{font-size:14.5px; line-height:1.65; color:var(--ink-soft); max-width:640px;}
+  .modal-link{padding:6px 28px 30px;}
+  .modal-link a{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:14px;
+    background:var(--ink); color:var(--paper); padding:11px 22px; border-radius:100px;
+  }
+  .modal-link a:hover{background:var(--coral);}
+
+  @media (max-width:600px){
+    .modal-gallery{grid-template-columns:1fr;}
+    .modal-thumbs{flex-direction:row; overflow-x:auto;}
+    .modal-thumbs img{width:64px; flex-shrink:0;}
+  }
+
   /* ---------- ABOUT ---------- */
   .about{
     background:var(--ink); color:var(--paper); border-radius:18px;
@@ -192,7 +221,7 @@
     font-size:13px; font-weight:600; border:1.5px solid #514B3E; padding:7px 13px; border-radius:100px; color:#EFE9DA;
   }
   .about-label{font-family:'Caveat', cursive; color:var(--gold); font-size:19px; margin-bottom:10px; display:block;}
- 
+
   .now-playing{margin-top:26px;}
   .now-playing .row{
     display:flex; align-items:center; gap:10px;
@@ -200,7 +229,7 @@
   }
   .now-playing .row .emoji{font-size:16px;}
   .now-playing .row .val{font-weight:600; color:var(--gold);}
- 
+
   @media (max-width:820px){
     .hero-grid{grid-template-columns:1fr;}
     .polaroid{max-width:280px; justify-self:start;}
@@ -208,39 +237,20 @@
     .about{grid-template-columns:1fr; padding:36px 26px;}
     .nav-mobile-hide{display:none;}
   }
- 
-  /* ---------- LIGHTBOX ---------- */
-  .lightbox{
-    position:fixed; inset:0; background:rgba(34,31,26,0.88);
-    display:none; align-items:center; justify-content:center;
-    z-index:200; padding:40px; cursor:zoom-out;
-  }
-  .lightbox.open{display:flex;}
-  .lightbox img{
-    width:min(90vw, 900px); max-height:85vh; object-fit:contain;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6); border-radius:4px;
-  }
-  .lightbox .close{
-    position:absolute; top:28px; right:36px; color:var(--paper);
-    font-family:'Space Grotesk', sans-serif; font-size:28px; font-weight:600;
-    cursor:pointer; line-height:1;
-  }
- 
+
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--line); padding:40px 0 60px;}
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
   footer .fnote{font-family:'Caveat', cursive; font-size:18px; color:var(--ink-soft);}
   footer .flinks{display:flex; gap:20px; font-size:13.5px; font-weight:600;}
   footer .flinks a:hover{color:var(--coral);}
- 
-  .doodle{opacity:.8;}
 </style>
 </head>
 <body>
- 
+
 <nav>
   <div class="wrap">
-    <div class="logo">sofie<span>.</span>b  𐔌՞. .՞𐦯₊˚⊹</div>
+    <div class="logo">sofie<span>.</span>b</div>
     <div class="nav-mobile-hide navsocial">
       <a href="https://github.com/sel-fie" target="_blank">GitHub</a>
       <a href="https://sel-fie.itch.io/" target="_blank">Itch.io</a>
@@ -248,18 +258,18 @@
     </div>
   </div>
 </nav>
- 
+
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">hi, let me introduce myself!</span>
+      <span class="eyebrow">hi, let me introduce myself! ✦</span>
       <h1 class="title">I'm Sofie —<br>I make <span class="accent">games</span>,<br>and code sometimes.</h1>
       <p class="sub">Computer Science student at McGill (Games concentration, Math minor). I split my time between Coding, Art, and Math— and I'm currently VP External for GameDev McGill.</p>
       <div class="hero-tags">
-        <span class="pill pink"><span class="emo">🎮</span> Game Dev</span>
-        <span class="pill navy"><span class="emo">🤝</span> Volunteering</span>
-        <span class="pill green"><span class="emo">🏃</span> Running</span>
-        <span class="pill red"><span class="emo">🕹️</span> Gaming</span>
+        <span class="pill coral"><span class="emo">🎮</span> Game Dev</span>
+        <span class="pill teal"><span class="emo">🤝</span> Volunteering</span>
+        <span class="pill violet"><span class="emo">🏃</span> Running</span>
+        <span class="pill gold"><span class="emo">🕹️</span> Gaming</span>
       </div>
     </div>
     <div class="polaroid">
@@ -269,170 +279,66 @@
     </div>
   </div>
 </header>
- 
+
 <div class="wrap">
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">All work</button>
-    <button class="filter-btn" data-filter="games">Games</button>
-    <button class="filter-btn" data-filter="2d">2D Art/UI</button>
-    <button class="filter-btn" data-filter="3d">3D Art</button>
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">All projects</button>
+    <button class="filter-btn" data-filter="game">Games</button>
+    <button class="filter-btn" data-filter="art">Art</button>
+    <button class="filter-btn" data-filter="programming">Programming</button>
   </div>
 </div>
- 
+
 <div class="wrap" id="games">
-  <div class="grid" id="masonry">
- 
-    <!-- GAMES -->
-     <a class="card" data-cat="games" href="https://isjasz.itch.io/justice-is-blank" target="_blank" rel="noopener">
-      <div class="bar violet"></div>
-      <img src="justice is blank cover.png" alt="Justice is [BLANK]">
-      <div class="body">
-        <span class="tag violet">Games · GMTK Gamejam 2026</span>
-        <h3>Justice is [BLANK]</h3>
-        <p>Character Art and minor UI programming</p>
-        <div class="meta">itch.io</div>
-      </div>
-    </a>
- 
-    <a class="card" data-cat="games" href="https://flyingsheep22.itch.io/pose-pose-execution" target="_blank" rel="noopener">
-      <div class="bar teal"></div>
-      <img src="Pose_Pose_Execution_Battle_Concept.png" alt="Pose Pose Execution">
-      <div class="body">
-        <span class="tag teal">Games · Ubisoft Gamelab 2026</span>
-        <h3>Pose Pose Execution</h3>
-        <p>Awarded "Best User Experience" and the "Audience Award". UI artist and 3D environment and prop modeling </p>
-        <div class="meta">itch.io</div>
-      </div>
-    </a>
- 
-    <a class="card" data-cat="games" href="https://sel-fie.itch.io/im-about-to-blow" target="_blank" rel="noopener">
-      <div class="bar gold"></div>
-      <img src="about to blow cover.jpg" alt="I'm About to Blow!">
-      <div class="body">
-        <span class="tag gold">Games · ETS Gamejam 2026</span>
-        <h3>I'm About to Blow!</h3>
-        <p> 3D prop modeling and UI art</p>
-        <div class="meta">itch.io</div>
-      </div>
-    </a>
- 
-    <a class="card" data-cat="games" href="https://sel-fie.itch.io/malefica" target="_blank" rel="noopener">
-      <div class="bar coral"></div>
-      <img src="malefica cover image.png" alt="Malefica">
-      <div class="body">
-        <span class="tag coral">Games · McGameJam 2026</span>
-        <h3>Malefica</h3>
-        <p>Volunteered full-time while also competing — worked on environment and UI art as well as animation integration into Unity. Ineligible for prizes as a team of full time volunteers</p>
-        <div class="meta">itch.io</div>
-      </div>
-    </a>
- 
-    <a class="card" data-cat="games" href="https://averageosiris.itch.io/underfished" target="_blank" rel="noopener">
-      <div class="bar teal"></div>
-      <img src="underfished cover.png" alt="UnderFished">
-      <div class="body">
-        <span class="tag teal">Games · Codejam 15 — 🏆 Best Game</span>
-        <h3>UnderFished</h3>
-        <p>48-hour hackathon build with a team of 4. Handled sound design and integration, assisted in bug fixing, and presentation.</p>
-        <div class="meta">itch.io</div>
-      </div>
-    </a>
- 
-    <div class="sticky-note">blah blah blah fill in later.</div>
- 
-    <a class="card" data-cat="games" href="https://gdm-studios-team-5.itch.io/cratscendo" target="_blank" rel="noopener">
-      <div class="bar violet"></div>
-      <img src="cratscendo cover.jpg" alt="Cratscendo">
-      <div class="body">
-        <span class="tag violet">Games · GDM Studios (10 weeks)</span>
-        <h3>Cratscendo</h3>
-        <p>Team of 8, for a 10 week competition. Did character art, and some enemies + animations, most 3D modeling & map design, health system and room mechanics coding, and weekly devlogs.</p>
-        <div class="meta">watch devlogs</div>
-      </div>
-    </a>
- 
-    <a class="card" data-cat="games" href="https://sel-fie.itch.io/hibearnate" target="_blank" rel="noopener">
-      <div class="bar gold"></div>
-      <img src="fatbearmaxxing cover.png" alt="Hibearnate">
-      <div class="body">
-        <span class="tag gold">Games · Solo 2D Project</span>
-        <h3>Hibearnate</h3>
-        <p>Summer 2D game project I worked on. </p>
-        <div class="meta">itch.io</div>
-      </div>
-    </a>
- 
- 
-<!-- 2D ART -->
-    <div class="card image-only lightbox-trigger" data-cat="2d" id="art">
-      <div class="bar gold"></div>
-      <img src="https://sofieb.carrd.co/assets/images/gallery04/bcb88e16.jpg" alt="2D art">
-      <div class="body"><span class="tag gold">2D Art / UI</span></div>
-    </div>
- 
-    <div class="card image-only lightbox-trigger" data-cat="2d">
-      <div class="bar gold"></div>
-      <img src="https://sofieb.carrd.co/assets/images/gallery04/ca683768.jpg" alt="2D art">
-      <div class="body"><span class="tag gold">2D Art / UI</span></div>
-    </div>
- 
-    <div class="card image-only lightbox-trigger" data-cat="2d">
-      <div class="bar gold"></div>
-      <img src="https://sofieb.carrd.co/assets/images/gallery04/af73f9fa.jpg" alt="2D art">
-      <div class="body"><span class="tag gold">2D Art / UI</span></div>
-    </div>
- 
-    <!-- 3D ART -->
-    <div class="card image-only lightbox-trigger" data-cat="3d" id="threed">
-      <div class="bar violet"></div>
-      <img src="https://sofieb.carrd.co/assets/images/gallery05/438379d2.jpg" alt="3D model">
-      <div class="body"><span class="tag violet">3D Art / Blender</span></div>
-    </div>
- 
-    <div class="card image-only lightbox-trigger" data-cat="3d">
-      <div class="bar violet"></div>
-      <img src="https://sofieb.carrd.co/assets/images/gallery05/1fd1c8d2.jpg" alt="3D model">
-      <div class="body"><span class="tag violet">3D Art / Blender</span></div>
-    </div>
- 
-    <div class="sticky-note">all 3D work made in Blender — some from tutorials, most from scratch. still learning!</div>
- 
-    <div class="card image-only lightbox-trigger" data-cat="3d">
-      <div class="bar violet"></div>
-      <img src="https://sofieb.carrd.co/assets/images/gallery05/afc1a0a6.jpg" alt="3D model">
-      <div class="body"><span class="tag violet">3D Art / Blender</span></div>
-    </div>
+  <div class="project-grid" id="projectGrid"></div>
 </div>
- 
+
 <div class="wrap" id="about">
   <div class="about">
     <div>
-      <span class="about-label"><u>a little more about me ♡ </u></span>
+      <span class="about-label">a little more about me ✦</span>
       <h2>Currently: Senior Year, Game Development, Mathematics</h2>
       <p>I'm a Computer Science student at McGill with a specialization in games with a minor in math. I am VP External for GameDev McGill, our school's game development club.</p>
       <p>Outside of school, I love to paint, play flute (12 years strong), listen to music, and of course, play video games.</p>
     </div>
     <div>
-      <span class="about-label"><u>my toolbox:</u></span>
+      <span class="about-label">my toolbox</span>
       <div class="stacklist">
         <span>Unity</span><span>Blender</span><span>C</span><span>C++</span><span>C#</span><span>Java</span>
         <span>Python</span><span>Git</span>
         <span>Figma</span><span>Clip Studio Paint</span>
-        </div>
-        <div class="now-playing">
-        <span class="about-label"><u>now playing:</u></span>
+      </div>
+      <div class="now-playing">
+        <span class="about-label">now playing</span>
         <div class="row"><span class="emoji">🎮</span> <span class="val">Esoteric Ebb</span></div>
         <div class="row"><span class="emoji">🎵</span> <span class="val">Radio by Bershy</span></div>
       </div>
     </div>
   </div>
 </div>
- 
-<div class="lightbox" id="lightbox">
-  <span class="close">&times;</span>
-  <img id="lightbox-img" src="" alt="">
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-close" id="modalClose">&times;</div>
+    <div class="modal-title">
+      <h2 id="modalTitle"></h2>
+      <span class="pc-meta" id="modalMeta"></span>
+    </div>
+    <div class="modal-tabs" id="modalTabs"></div>
+    <div class="modal-gallery" id="modalGallery">
+      <div class="modal-thumbs" id="modalThumbs"></div>
+      <div class="modal-main"><img id="modalMainImg" src="" alt=""></div>
+    </div>
+    <div class="modal-about" id="modalAbout">
+      <span class="about-label">about</span>
+      <p id="modalAboutText"></p>
+    </div>
+    <div class="modal-link" id="modalLinkWrap">
+      <a id="modalLink" href="#" target="_blank" rel="noopener">View project ↗</a>
+    </div>
+  </div>
 </div>
- 
+
 <footer>
   <div class="wrap">
     <span class="fnote">fueled by red bull and coffee ✦</span>
@@ -444,48 +350,244 @@
     </div>
   </div>
 </footer>
- 
+
 <script>
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('#masonry .card, #masonry .sticky-note');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        if(card.classList.contains('sticky-note')){
-          card.style.display = (filter==='all') ? '' : 'none';
-          return;
-        }
-        const cat = card.dataset.cat;
-        card.style.display = (filter==='all' || filter===cat) ? '' : 'none';
-      });
+  // ---------- PROJECT DATA ----------
+  // Each project can carry multiple tags (game / art / programming).
+  // `tabs` splits the modal content when a project spans more than one
+  // kind of contribution (e.g. did both art AND programming on it).
+  const projects = [
+    {
+      title: "Justice is [BLANK]",
+      meta: "Games · GMTK Gamejam 2026",
+      cover: "justice is blank cover.png",
+      tags: ["game", "art", "programming"],
+      link: "https://isjasz.itch.io/justice-is-blank",
+      tabs: [
+        { label: "Art", images: ["justice is blank cover.png"], about: "Character art for Justice is [BLANK], made during GMTK Gamejam 2026." },
+        { label: "Programming", images: ["justice is blank cover.png"], about: "Minor UI programming work for the jam build." }
+      ]
+    },
+    {
+      title: "Pose Pose Execution",
+      meta: "Games · Ubisoft Gamelab 2026",
+      cover: "Pose_Pose_Execution_Battle_Concept.png",
+      tags: ["game", "art"],
+      link: "https://flyingsheep22.itch.io/pose-pose-execution",
+      tabs: [
+        { label: "Art", images: ["Pose_Pose_Execution_Battle_Concept.png"], about: "UI art and 3D environment & prop modeling for Pose Pose Execution — awarded \"Best User Experience\" and the \"Audience Award\" at Ubisoft Gamelab 2026." }
+      ]
+    },
+    {
+      title: "I'm About to Blow!",
+      meta: "Games · ETS Gamejam 2026",
+      cover: "about to blow cover.jpg",
+      tags: ["game", "art"],
+      link: "https://sel-fie.itch.io/im-about-to-blow",
+      tabs: [
+        { label: "Art", images: ["about to blow cover.jpg"], about: "3D prop modeling and UI art for I'm About to Blow!, made at ETS Gamejam 2026." }
+      ]
+    },
+    {
+      title: "Malefica",
+      meta: "Games · McGameJam 2026",
+      cover: "malefica cover image.png",
+      tags: ["game", "art", "programming"],
+      link: "https://sel-fie.itch.io/malefica",
+      tabs: [
+        { label: "Art", images: ["malefica cover image.png"], about: "Environment and UI art for Malefica." },
+        { label: "Programming", images: ["malefica cover image.png"], about: "Animation integration into Unity. Volunteered full-time on this build during McGameJam 2026 — ineligible for prizes as a team of full-time volunteers." }
+      ]
+    },
+    {
+      title: "UnderFished",
+      meta: "Games · Codejam 15 — 🏆 Best Game",
+      cover: "underfished cover.png",
+      tags: ["game", "programming"],
+      link: "https://averageosiris.itch.io/underfished",
+      tabs: [
+        { label: "Programming", images: ["underfished cover.png"], about: "Sound design and integration, bug fixing, and the live demo presentation. Built in 48 hours with a team of 4 — won Best Game at Codejam 15." }
+      ]
+    },
+    {
+      title: "Cratscendo",
+      meta: "Games · GDM Studios (10 weeks)",
+      cover: "cratscendo cover.jpg",
+      tags: ["game", "art", "programming"],
+      link: "https://gdm-studios-team-5.itch.io/cratscendo",
+      tabs: [
+        { label: "Art", images: ["cratscendo cover.jpg"], about: "Character art, enemy designs and animations, plus most of the 3D modeling and map design." },
+        { label: "Programming", images: ["cratscendo cover.jpg"], about: "Health system and room mechanics coding, plus weekly devlogs. Team of 8, built over a 10-week competition with GDM Studios." }
+      ]
+    },
+    {
+      title: "Hibearnate",
+      meta: "Games · Solo 2D Project",
+      cover: "fatbearmaxxing cover.png",
+      tags: ["game", "art", "programming"],
+      link: "https://sel-fie.itch.io/hibearnate",
+      tabs: [
+        { label: "Art & Code", images: ["fatbearmaxxing cover.png"], about: "Solo 2D game project — handled all the art and programming myself over the summer." }
+      ]
+    },
+    {
+      title: "2D Art",
+      meta: "Illustration · UI",
+      cover: "https://sofieb.carrd.co/assets/images/gallery04/bcb88e16.jpg",
+      tags: ["art"],
+      link: null,
+      tabs: [
+        { label: "Art", images: [
+            "https://sofieb.carrd.co/assets/images/gallery04/bcb88e16.jpg",
+            "https://sofieb.carrd.co/assets/images/gallery04/ca683768.jpg",
+            "https://sofieb.carrd.co/assets/images/gallery04/af73f9fa.jpg"
+          ], about: "A collection of 2D art and UI pieces." }
+      ]
+    },
+    {
+      title: "3D Art",
+      meta: "Blender",
+      cover: "https://sofieb.carrd.co/assets/images/gallery05/438379d2.jpg",
+      tags: ["art"],
+      link: null,
+      tabs: [
+        { label: "Art", images: [
+            "https://sofieb.carrd.co/assets/images/gallery05/438379d2.jpg",
+            "https://sofieb.carrd.co/assets/images/gallery05/1fd1c8d2.jpg",
+            "https://sofieb.carrd.co/assets/images/gallery05/afc1a0a6.jpg"
+          ], about: "3D work made in Blender — some from tutorials, most from scratch. Still learning!" }
+      ]
+    }
+  ];
+
+  const tagLabel = { game: "Game", art: "Art", programming: "Programming" };
+
+  // ---------- RENDER CARDS ----------
+  const grid = document.getElementById('projectGrid');
+
+  function renderCards(filter){
+    grid.innerHTML = '';
+    projects.forEach((p, i) => {
+      if(filter !== 'all' && !p.tags.includes(filter)) return;
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <img src="${p.cover}" alt="${p.title}">
+        <div class="pc-body">
+          <span class="pc-meta">${p.meta}</span>
+          <h3>${p.title}</h3>
+          <div class="pc-tags">
+            ${p.tags.map(t => `<span class="pc-tag ${t}">${tagLabel[t]}</span>`).join('')}
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', () => openModal(i));
+      grid.appendChild(card);
     });
-  });
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
- 
-  document.querySelectorAll('.lightbox-trigger').forEach(card => {
-    card.addEventListener('click', () => {
-      const img = card.querySelector('img');
-      if(!img) return;
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('open');
-    });
-  });
- 
-  function closeLightbox(){
-    lightbox.classList.remove('open');
-    lightboxImg.src = '';
   }
-  lightbox.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => {
-    if(e.key === 'Escape') closeLightbox();
+
+  // ---------- FILTERS ----------
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCards(btn.dataset.filter);
+    });
   });
+
+  // ---------- MODAL ----------
+  const overlay = document.getElementById('modalOverlay');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMeta = document.getElementById('modalMeta');
+  const modalTabs = document.getElementById('modalTabs');
+  const modalGallery = document.getElementById('modalGallery');
+  const modalThumbs = document.getElementById('modalThumbs');
+  const modalMainImg = document.getElementById('modalMainImg');
+  const modalAboutText = document.getElementById('modalAboutText');
+  const modalLinkWrap = document.getElementById('modalLinkWrap');
+  const modalLink = document.getElementById('modalLink');
+
+  let currentProject = null;
+  let currentTabIndex = 0;
+
+  function openModal(projectIndex){
+    currentProject = projects[projectIndex];
+    currentTabIndex = 0;
+    modalTitle.textContent = currentProject.title;
+    modalMeta.textContent = currentProject.meta;
+
+    // tabs — only show if more than one
+    modalTabs.innerHTML = '';
+    if(currentProject.tabs.length > 1){
+      currentProject.tabs.forEach((tab, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'modal-tab' + (i === 0 ? ' active' : '');
+        btn.textContent = tab.label;
+        btn.addEventListener('click', () => {
+          currentTabIndex = i;
+          modalTabs.querySelectorAll('.modal-tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderTabContent();
+        });
+        modalTabs.appendChild(btn);
+      });
+    }
+
+    // link
+    if(currentProject.link){
+      modalLinkWrap.style.display = '';
+      modalLink.href = currentProject.link;
+    } else {
+      modalLinkWrap.style.display = 'none';
+    }
+
+    renderTabContent();
+    overlay.classList.add('open');
+  }
+
+  function renderTabContent(){
+    const tab = currentProject.tabs[currentTabIndex];
+
+    // gallery
+    modalThumbs.innerHTML = '';
+    if(tab.images.length > 1){
+      modalGallery.classList.remove('single-image');
+      tab.images.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = i === 0 ? 'active' : '';
+        img.addEventListener('click', () => {
+          modalMainImg.src = src;
+          modalThumbs.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+          img.classList.add('active');
+        });
+        modalThumbs.appendChild(img);
+      });
+    } else {
+      modalGallery.classList.add('single-image');
+    }
+    modalMainImg.src = tab.images[0];
+    modalMainImg.alt = currentProject.title;
+
+    // about
+    modalAboutText.textContent = tab.about;
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+  }
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => {
+    if(e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeModal();
+  });
+
+  // initial render
+  renderCards('all');
 </script>
- 
+
 </body>
 </html>
- 
